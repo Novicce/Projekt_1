@@ -2,12 +2,14 @@ ODDELOVAC = ("=" * 79)
 
 print(ODDELOVAC)
 
-from traceback import print_tb
+from curses.ascii import isalpha
+from gettext import find
+from itertools import count
 from users import user_bob
 from users import user_ann
 from users import user_liz
 from users import user_mike
-from task_template import TEXTS
+from task_template import text_1,text_2,text_3
 
 #===================================================
 #vstup name a password
@@ -36,7 +38,33 @@ else:
   print("unregistered user, terminating the program..")
   exit()
 print(ODDELOVAC)
-print("Enter a number btw. 1 and 3 to select: 1")
-print(ODDELOVAC)
+# print("Enter a number btw. 1 and 3 to select: 1")
+# print(ODDELOVAC)
 #===================================================
+#práce s textem
 
+vyber = int(input("Enter a number btw. 1 and 3 to select: "))
+print(ODDELOVAC)
+if vyber == 1:
+    from collections import Counter 
+    input_string = text_1
+    print("Zvolený text je: "+"\n"+input_string + "\n") 
+    output1 = {key:input_string.count(key) for key in input_string.split()} 
+
+elif vyber == 2:
+    from collections import Counter 
+    input_string = text_2
+    print("Zvolený text je: "+"\n"+input_string + "\n") 
+    output1 = {key:input_string.count(key) for key in input_string.split()} 
+
+elif vyber == 3:
+    from collections import Counter 
+    input_string = text_3
+    print("Zvolený text je: "+"\n"+input_string + "\n") 
+    output1 = {key:input_string.count(key) for key in input_string.split()} 
+else:
+    print("Not find")
+    exit()
+print(ODDELOVAC)
+
+#===================================================
