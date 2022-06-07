@@ -1,10 +1,24 @@
+"""
+2
+projekt_1.py: první projekt do Engeto Online Python Akademie
+3
+4
+author: Martin Nováček
+5
+email: mnovacek@me.com
+6
+discord: Novicce #7276
+"""
+
+
+
+
+
+
 ODDELOVAC = ("=" * 79)
 
 print(ODDELOVAC)
 
-from curses.ascii import isalpha
-from gettext import find
-from itertools import count
 from users import user_bob
 from users import user_ann
 from users import user_liz
@@ -68,3 +82,14 @@ else:
 print(ODDELOVAC)
 
 #===================================================
+
+# oddelovac: str = "+--+----------+--+"
+
+# rozdělím `str` na `list` bez diakritiky a malým písmem
+vycistena_slova = list()
+
+for slovo in text_1.split():
+    vycistena_slova.append(
+        slovo.strip(",.:;")
+    )
+#print(vycistena_slova)
